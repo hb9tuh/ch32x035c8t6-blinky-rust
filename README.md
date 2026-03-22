@@ -1,15 +1,15 @@
-# CH32V003 Blinky in Rust
+# CH32V003F4P6 Blinky in Rust
 
 I could not find a small and simple blinky example for CH32V003 and probe-rs, so here it is!
 
 ## Hardware
 
-I used CH32V003F4P6-EVT-R0 and WCH-LinkE. The project is set up for CH32V003F4P6 but should work with any other CH32V chip as well, just change it in `Cargo.toml` and `.cargo/config.toml`. The WCH-Link is detected automatically by probe-rs.
+I used CH32X035C8T6-EVT-R0 and WCH-LinkE. The project is set up for CH32X035C8T6 but should work with any other CH32V chip as well, just change it in `Cargo.toml` and `.cargo/config.toml`. The WCH-Link is detected automatically by probe-rs.
 
 ### Connections
-On CH32V003F4P6-EVT-R0, connect `PD6` to `LED1`.
+On CH32X035C8T6-EVT, connect `PD6` to `LED1`.
 
-Between CH32V003F4P6-EVT-R0 and WCH-LinkE, connect:
+Between CH32X035C8T6-EVT-R0 and WCH-LinkE, connect:
 
 `VCC` to `3V3`<br>
 `GND` to `GND`<br>
@@ -25,7 +25,7 @@ cargo install probe-rs-tools
 
 2. Set up project to use Rust Nightly
 ```shell
-cd ch32v003-blinky-rust
+cd ch32c8t6-blinky-rust
 rustup install nightly
 rustup override set nightly
 ```
@@ -53,7 +53,7 @@ cargo embed
     "name": "probe-rs ch32",
     "cwd": "${workspaceFolder}",
     "connectUnderReset": false,
-    "chip": "CH32V003",
+    "chip": "CH32X035",
     "flashingConfig": {
         "flashingEnabled": true,
         "haltAfterReset": true
